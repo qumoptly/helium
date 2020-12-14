@@ -1,0 +1,93 @@
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<title>搜索</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" href="css/glowing.css"/>
+	<link rel="stylesheet" type="text/css" href="css/input.css">
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/a.js"></script>	
+	<style type="text/css">
+		.box{
+			 width:98%;text-align:center;margin:5px;padding:3px;
+		}
+	</style>
+</head>
+<body>
+	<div class="htmleaf-container">
+		<div align="center" style="margin-top:2px;">
+			<div class="glowing disco box" style="box-shadow:inset 0 0 6px #ccc;text-align:center;">
+			    <div class="quicknav">
+					<div class="pull-right hidden-phone">
+						<p id="api-key-show" style="cursor: pointer;font-size: 24px; color: #6d749a;"><a>搜索</a></p>
+						<p id="api-key-content" style="display:none;font-size: 20px; color: #5E6C77;"">
+							<br>Shodan and Zoomeye<br>
+						</p>
+					</div>
+					<div class="clear"></div>
+			    </div>
+				<div class="navbar navbar-top">
+					<div class="navbar-inner">
+						<img style="height:32px;" src="./img/shodan.png" alt="Shodan" alt="shodan" />
+						<br>
+						<div class="container-fluid"><a href="https://www.shodan.io/home" class="brand"></a>
+						<div class="search-bar">
+							<form action="https://www.shodan.io/search" method="GET">
+							<input type="text" name="query" id="search_input" autofocus="autofocus" placeholder="dns" class="query" />
+							</form>
+						</div>
+						</div>
+						<img style="width:32px;height:32px;" src="./img/zoomeye.svg" alt="Zoomeye" /><br>
+						<div class="container-fluid"><a href="https://www.zoomeye.org/" class="brand"></a>
+						<div class="search-bar">
+							<form action="https://www.zoomeye.org/searchResult" method="GET">
+							<input type="text" name="q" id="search_input" autofocus="autofocus" placeholder="idc" class="q" />
+							</form>
+						</div>
+						</div>
+					</div>
+				</div>
+			<em>
+			<p><a href="https://c.runoob.com/"><img style="width:32px;height:32px;" src="./img/setmin.png" alt="img"></a>
+			<a style="color:#5E6C77" href="https://qumoptly.github.io">&nbsp; 2018 - qumoptly </a> </p>
+			</em>
+			</div>
+		</div>
+	</div>
+<script>$('#api-key-show').on('click', function() {
+    $('#api-key-show').hide();
+    $('#api-key-content').show();
+});
+
+</script>
+  <!-- live2d -->
+  <script src="./js/L2Dwidget.min.js"></script>
+  <script type="text/javascript">
+	L2Dwidget
+	.on('*', (name) => {
+		console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+	})
+	.init({
+		//model: {jsonPath:"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","scale": 1 }, 
+		//display: {position: "right", width: 200, height: 400, hOffset: 0, vOffset: 0 }, 
+		//mobile: { "show": true, "scale": 0.5 }, 
+		dialog: {
+		// 开启对话框
+		enable: true,
+		script: {
+		// 每空闲 10 秒钟，显示一条一言
+		'every idle 10s': '$hitokoto$',
+		// 当触摸到角色身体
+		'tap body': '哎呀！别碰我！',
+		// 当触摸到角色头部
+		'tap face': '人家已经不是小孩子了！'
+		}}
+		});
+  </script>
+
+</body>
+</html>
